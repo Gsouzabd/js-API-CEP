@@ -2,6 +2,9 @@
 
 
 async function buscaEndereco(cep){
+    var mensagemErro = document.getElementById('erro');
+    mensagemErro.innerHTML = '';
+
   
     
     try{
@@ -26,6 +29,8 @@ async function buscaEndereco(cep){
         console.log(consultaCEPConvertida);
         return consultaCEPConvertida;
     }catch(erro){
+
+        mensagemErro.innerHTML = `<p>CEP Inválido! Corrija e tente novamente</p>`
         console.log(erro);
     }
 }
